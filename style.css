@@ -1,0 +1,191 @@
+body{
+    font-family: Arial,sans-serif;
+}
+
+img{
+    max-width: 1100px;
+    height: auto;
+}
+
+.container{
+    max-width: 1100px;
+    width: 100%;
+    padding: 40px 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.header{
+    margin: 30px 0;
+    overflow: hidden;
+}
+
+.header img{ 
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+#uploaded-image {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #eee;
+    box-shadow: 1px 2px 3px #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.clock {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.date {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.gallery{
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+}
+
+.gallery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #eee;
+    box-shadow: 1px 2px 3px #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.gallery-image {
+    display: block;
+    width: 300px; /* Sesuaikan ukuran gambar */
+    height: auto; /* Sesuaikan ukuran gambar */
+    cursor: pointer;
+}
+
+.download-btn {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background-color: #0b2857;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+  /* Style the modal image */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  /* Style the close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+.footer{
+    margin: 40px 0;
+    overflow: hidden;
+}
+
+.footer h2{
+    padding: 15px 0;
+    border-bottom: 7px solid #222;
+    display: inline-block;
+}
+
+.social svg{
+    max-width: 30px;
+}
+
+.social a{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 100%;
+    font-size: 40px;
+}
+
+.social a.fb{
+    color: #0055bf;
+}
+
+.social a.twt{
+    color: #000000;
+}
+
+.social a.ig{
+    color: #ff286d;
+}
+
+.social a.tt{
+    color: #000000;
+}
+
+/* Responsive */
+@media screen and (max-width:768px){
+    .gallery{
+        grid-template-columns: 1fr 1fr;
+    }
+    .gallery img{
+        height: 170px;
+    }
+}
