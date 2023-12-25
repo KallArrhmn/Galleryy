@@ -9,11 +9,33 @@
     <title>My Name Is Kall</title>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="foto/foto profile/pp1.png">
+    <audio autoplay>
+        <source src="MP3.mp3" type="audio/mpeg">
+        <source src="MP3.ogg" type="audio/oog">
+    </audio>
+
+    <nav id="navbar-example2" class="nav nav-pills justify-content-center navbar px-3 mb-3" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#"></a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact Me</a>
+          </li>
+        </ul>
+    </nav>
+
+    <div class="container" id="home">
+        <div class="header" style="margin-bottom: 20px;">
+            <a href="index.html">
+                <img src="foto/foto profile/pp1.png">
+            </a>
             <h1>Family Gallery</h1>
-            <p>This is Family Gallery</p>
+            <p>Making the best memories together every day.</p>
         </div>
         <div class="clock" id="clock"></div>
         <div class="date" id="date"></div>
@@ -22,30 +44,56 @@
             <span class="close">&times;</span>
             <img class="modal-content" id="modalImage">
             <a id="downloadButton" href="#" download="gambar.jpg" class="btn btn-primary">Download</a>
-        </div>
-
-        <div class="gallery">
-            <div class="image-container">
-                <img class="gallery-image" src="foto/foto/GRD08638.JPG" data-src="foto/foto/GRD08638.JPG">
+        </div><br>
+            <div class="gallery" id="gallery">
+                <div class="card border-secondary mb-3" style="max-width: 100rem;">
+                    <div class="image-container">
+                        <img class="gallery-image" src="foto/foto/GRD08638.JPG" data-src="foto/foto/GRD08638.JPG">
+                    </div>
+                </div>
+                <div class="card border-secondary mb-3" style="max-width: 100rem;">
+                    <div class="image-container">
+                        <img class="gallery-image" src="foto/foto/GRD08664.JPG" data-src="foto/foto/GRD08664.JPG">
+                    </div>
+                </div>
+                <div class="card border-secondary mb-3" style="max-width: 100rem;">
+                    <div class="image-container">
+                        <img class="gallery-image" src="foto/foto/GRD08945.JPG" data-src="foto/foto/GRD08945.JPG">
+                    </div>
+                </div>
+                <div class="card border-secondary mb-3" style="max-width: 100rem;">
+                    <div class="image-container">
+                        <img class="gallery-image" src="foto/foto/GRD08739.JPG" data-src="foto/foto/GRD08739.JPG">
+                    </div>
+                </div>
+                <div class="card border-secondary mb-3" style="max-width: 100rem;">
+                    <div class="image-container">
+                        <img class="gallery-image" src="foto/foto/GRD08985.JPG" data-src="foto/foto/GRD08985.JPG">
+                    </div>
+                </div>
+                <div class="card border-secondary mb-3" style="max-width: 100rem;">
+                    <div class="image-container">
+                        <img class="gallery-image" src="foto/foto/GRD09002.JPG" data-src="foto/foto/GRD09002.JPG">
+                    </div>
+                </div>
+                <div class="card border-secondary mb-3" style="max-width: 100rem;">
+                    <div class="image-container">
+                        <img class="gallery-image" src="foto/foto/GRD08833.JPG" data-src="foto/foto/GRD08833.JPG">
+                    </div>
+                </div>
+                <div class="card border-secondary mb-3" style="max-width: 100rem;">
+                    <div class="image-container">
+                        <img class="gallery-image" src="foto/foto/GRD08910.JPG" data-src="foto/foto/GRD08910.JPG">
+                    </div>
+                </div>
+                <div class="card border-secondary mb-3" style="max-width: 100rem;">
+                    <div class="image-container">
+                        <img class="gallery-image" src="foto/foto/GRD08978.JPG" data-src="foto/foto/GRD08978.JPG">
+                    </div>
+                </div>
+                <!-- Other image containers -->
             </div>
-            <div class="image-container">
-                <img class="gallery-image" src="foto/foto/GRD08664.JPG" data-src="foto/foto/GRD08664.JPG">
-            </div>
-            <div class="image-container">
-                <img class="gallery-image" src="foto/foto/GRD08679.JPG" data-src="foto/foto/GRD08679.JPG">
-            </div>
-            <div class="image-container">
-                <img class="gallery-image" src="foto/foto/GRD08739.JPG" data-src="foto/foto/GRD08739.JPG">
-            </div>
-            <div class="image-container">
-                <img class="gallery-image" src="foto/foto/GRD08985.JPG" data-src="foto/foto/GRD08985.JPG">
-            </div>
-            <div class="image-container">
-                <img class="gallery-image" src="foto/foto/GRD09002.JPG" data-src="foto/foto/GRD09002.JPG">
-            </div>
-            <!-- Other image containers -->
-        </div>
-        <div class="footer">
+        <div class="footer" id="contact">
             <h2>Contact Me</h2>
             <div class="social">    
                 <a href="#facebook" class="fb"><i class="fa-brands fa-facebook"></i></a>
@@ -54,37 +102,47 @@
                 <a href="#tiktok" class="tt"><i class="fa-brands fa-tiktok"></i></a>
             </div>
         </div>
+    </div>
 
 <script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// downloader
 const images = document.querySelectorAll('.gallery-image');
 const modal = document.getElementById('myModal');
 const modalImg = document.getElementById('modalImage');
 const closeBtn = document.querySelector('.close');
 
-// Tambahkan event listener untuk setiap gambar
 images.forEach(img => {
-  img.addEventListener('click', function() {
-    modal.style.display = 'block';
-    modalImg.src = this.getAttribute('data-src');
-
-    // Update link download dengan sumber gambar yang ditampilkan di modal
-    const downloadButton = document.getElementById('downloadButton');
-    downloadButton.href = this.getAttribute('data-src');
-  });
-  closeBtn.addEventListener('click', function() {
-  modal.style.display = 'none';
+    img.addEventListener('click', function() {
+        modal.style.display = 'block';
+        modalImg.src = this.getAttribute('data-src');
+        const downloadButton = document.getElementById('downloadButton');
+        downloadButton.href = this.getAttribute('data-src');
+    });
 });
 
-// Event listener untuk menutup modal saat klik di luar area gambar atau tombol close
-window.addEventListener('click', function(event) {
-  if (event.target === modal) {
+closeBtn.addEventListener('click', function() {
     modal.style.display = 'none';
-  }
-});
 });
 
-
-
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
 
     // waktu dan tahun
     function updateClock() {
