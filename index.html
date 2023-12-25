@@ -24,6 +24,9 @@
             <a class="nav-link" href="#gallery">Gallery</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#comments">Comments</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#contact">Contact Me</a>
           </li>
         </ul>
@@ -40,6 +43,7 @@
         <div class="clock" id="clock"></div>
         <div class="date" id="date"></div>
 
+        <hr style="border-top: 1px solid #000; margin: 20px 0;">
         <div id="myModal" class="modal">
             <span class="close">&times;</span>
             <img class="modal-content" id="modalImage">
@@ -49,50 +53,90 @@
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08638.JPG" data-src="foto/foto/GRD08638.JPG">
+                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
+                        <span  class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08664.JPG" data-src="foto/foto/GRD08664.JPG">
+                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
+                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08945.JPG" data-src="foto/foto/GRD08945.JPG">
+                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
+                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08739.JPG" data-src="foto/foto/GRD08739.JPG">
+                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
+                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08985.JPG" data-src="foto/foto/GRD08985.JPG">
+                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
+                        <span cclass="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD09002.JPG" data-src="foto/foto/GRD09002.JPG">
+                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
+                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08833.JPG" data-src="foto/foto/GRD08833.JPG">
+                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
+                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08910.JPG" data-src="foto/foto/GRD08910.JPG">
+                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
+                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
-                <div class="card border-secondary mb-3" style="max-width: 100rem;">
+                <div class="card border-secondary mb-3" style="max-width: auto;" >
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08978.JPG" data-src="foto/foto/GRD08978.JPG">
+                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
+                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <!-- Other image containers -->
             </div>
+            <hr id="comments" style="border-top: 1px solid #000; margin: 20px 0;">
+            <div class="comments-section">
+                <h2>Comments</h2>
+                <form id="commentForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Name" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" placeholder="Comment" id="comment" rows="3" required></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="comments-list">
+                    <!-- Daftar komentar akan ditampilkan di sini -->
+                </div>
+            </div>
+        
+        <hr id="comments" style="border-top: 1px solid #000; margin: 20px 0;">
         <div class="footer" id="contact">
             <h2>Contact Me</h2>
             <div class="social">    
@@ -117,6 +161,108 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Temukan semua tombol 'like'
+const likeButtons = document.querySelectorAll('.like-button');
+
+// Tambahkan event listener untuk setiap tombol 'like'
+likeButtons.forEach(button => {
+    let count = 0; // inisialisasi jumlah 'like' untuk setiap gambar
+    button.addEventListener('click', function() {
+        count++;
+        const likeCount = this.nextElementSibling; // elemen berikutnya setelah tombol 'like'
+        likeCount.textContent = count; // perbarui teks jumlah 'like'
+        this.disabled = true; // nonaktifkan tombol setelah diklik (opsional)
+    });
+});
+
+button.addEventListener('click', function() {
+    if (!this.classList.contains('liked')) {
+        count++;
+        likeCount.textContent = count;
+        this.classList.add('liked');
+        this.disabled = true; // Nonaktifkan tombol ketika di-like
+    } else {
+        count--;
+        likeCount.textContent = count;
+        this.classList.remove('liked');
+        this.disabled = false; // Aktifkan tombol ketika di-unlike
+    }
+
+    likes[imageSrc] = count;
+    localStorage.setItem('likes', JSON.stringify(likes)); // Simpan perubahan di local storage
+});
+
+document.getElementById('commentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const comment = document.getElementById('comment').value;
+
+    // Buat elemen baru untuk menampilkan komentar
+    const commentItem = document.createElement('div');
+    commentItem.classList.add('comment-item');
+    commentItem.innerHTML = `
+        <p><strong>${name}</strong>: ${comment}</p>
+    `;
+
+    // Tambahkan komentar ke dalam daftar komentar
+    const commentsList = document.querySelector('.comments-list');
+    commentsList.appendChild(commentItem);
+
+    // Bersihkan formulir setelah komentar dikirim
+    document.getElementById('name').value = '';
+    document.getElementById('comment').value = '';
+});
+
+function saveComment(name, comment) {
+    const commentData = {
+        name: name,
+        comment: comment
+    };
+
+    let comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.push(commentData);
+    localStorage.setItem('comments', JSON.stringify(comments));
+}
+
+// Menampilkan komentar dari localStorage saat halaman dimuat
+function displayComments() {
+    const commentsList = document.querySelector('.comments-list');
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+    comments.forEach(commentData => {
+        const commentItem = document.createElement('div');
+        commentItem.classList.add('comment-item');
+        commentItem.innerHTML = `
+            <p><strong>${commentData.name}</strong>: ${commentData.comment}</p>
+        `;
+        commentsList.appendChild(commentItem);
+    });
+}
+
+// Memanggil fungsi displayComments saat halaman dimuat
+displayComments();
+
+// Menambahkan event listener pada form untuk menyimpan komentar ke localStorage
+document.getElementById('commentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const comment = document.getElementById('comment').value;
+
+    // Menyimpan komentar ke localStorage
+    saveComment(name, comment);
+
+    // Menampilkan komentar yang baru ditambahkan
+    const commentItem = document.createElement('div');
+    commentItem.classList.add('comment-item');
+    commentItem.innerHTML = `
+        <p><strong>${name}</strong>: ${comment}</p>
+    `;
+    const commentsList = document.querySelector('.comments-list');
+    commentsList.appendChild(commentItem);
 });
 
 // downloader
