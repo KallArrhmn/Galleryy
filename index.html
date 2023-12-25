@@ -9,7 +9,7 @@
     <title>My Name Is Kall</title>
 </head>
 <body>
-    <audio autoplay>
+    <audio autoplay loop>
         <source src="MP3.mp3" type="audio/mpeg">
         <source src="MP3.ogg" type="audio/oog">
     </audio>
@@ -43,7 +43,7 @@
         <div id="myModal" class="modal">
             <span class="close">&times;</span>
             <img class="modal-content" id="modalImage">
-            <a id="downloadButton" href="#" download="gambar.jpg" class="btn btn-primary">Download</a>
+            <button id="closeButton" class="btn btn-primary">Close</button>
         </div><br>
             <div class="gallery" id="gallery">
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
@@ -123,18 +123,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const images = document.querySelectorAll('.gallery-image');
 const modal = document.getElementById('myModal');
 const modalImg = document.getElementById('modalImage');
-const closeBtn = document.querySelector('.close');
+const closeButton = document.getElementById('closeButton');
 
 images.forEach(img => {
     img.addEventListener('click', function() {
         modal.style.display = 'block';
         modalImg.src = this.getAttribute('data-src');
-        const downloadButton = document.getElementById('downloadButton');
-        downloadButton.href = this.getAttribute('data-src');
     });
 });
 
-closeBtn.addEventListener('click', function() {
+closeButton.addEventListener('click', function() {
     modal.style.display = 'none';
 });
 
@@ -143,6 +141,8 @@ window.addEventListener('click', function(event) {
         modal.style.display = 'none';
     }
 });
+
+
 
     // waktu dan tahun
     function updateClock() {

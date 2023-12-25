@@ -3,6 +3,13 @@ body{
     padding-top: 50px;
 }
 
+#myModal .close {
+    margin-top: 30px; 
+}
+
+.modal .close {
+    display: none;
+}
 
 #navbar-example2 {
     position: fixed;
