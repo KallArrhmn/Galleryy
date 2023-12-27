@@ -103,6 +103,12 @@ img{
     cursor: pointer;
 }
 
+.btn {
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 1px 2px 3px #000000;
+}
+
 .download-btn {
     display: none;
     position: absolute;
