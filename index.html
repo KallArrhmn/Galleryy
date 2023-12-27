@@ -325,6 +325,32 @@ copyright.innerHTML = `Copyright &copy; ${currentYear} h.arrhmn`;
 const footer = document.querySelector('.footer');
 footer.appendChild(copyright);
 
+// Tambahkan event listener untuk setiap tombol 'like'
+likeButtons.forEach(button => {
+    let count = 0; // inisialisasi jumlah 'like' untuk setiap gambar
+    const imageSrc = button.previousElementSibling.getAttribute('data-src'); // Dapatkan URL gambar
+
+    // Periksa apakah 'like' sudah ada di localStorage untuk gambar tersebut
+    const storedLikes = localStorage.getItem('likes');
+    const likes = storedLikes ? JSON.parse(storedLikes) : {};
+
+    if (likes[imageSrc]) {
+        count = likes[imageSrc]; // Jika ada, gunakan jumlah 'like' yang tersimpan
+        button.disabled = true; // Nonaktifkan tombol jika sudah di-like sebelumnya
+    }
+
+    button.addEventListener('click', function() {
+        count++;
+        const likeCount = this.nextElementSibling; // elemen berikutnya setelah tombol 'like'
+        likeCount.textContent = count; // perbarui teks jumlah 'like'
+        this.disabled = true; // nonaktifkan tombol setelah diklik (opsional)
+
+        // Simpan jumlah 'like' ke localStorage
+        likes[imageSrc] = count;
+        localStorage.setItem('likes', JSON.stringify(likes));
+    });
+});
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
