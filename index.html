@@ -53,64 +53,46 @@
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08638.JPG" data-src="foto/foto/GRD08638.JPG">
-                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
-                        <span  class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08664.JPG" data-src="foto/foto/GRD08664.JPG">
-                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
-                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08945.JPG" data-src="foto/foto/GRD08945.JPG">
-                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
-                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08739.JPG" data-src="foto/foto/GRD08739.JPG">
-                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
-                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08985.JPG" data-src="foto/foto/GRD08985.JPG">
-                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
-                        <span cclass="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD09002.JPG" data-src="foto/foto/GRD09002.JPG">
-                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
-                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08833.JPG" data-src="foto/foto/GRD08833.JPG">
-                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
-                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: 100rem;">
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08910.JPG" data-src="foto/foto/GRD08910.JPG">
-                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
-                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <div class="card border-secondary mb-3" style="max-width: auto;" >
                     <div class="image-container">
                         <img class="gallery-image" src="foto/foto/GRD08978.JPG" data-src="foto/foto/GRD08978.JPG">
-                        <button class="like-button btn btn-outline-primary" style="position: absolute; top: 10px; right: 10px;"><i class="far fa-heart"></i> Like</button>
-                        <span class="like-count" style="position: absolute; bottom: 10px; right: 10px; color: white; font-weight: bold;">0</span>
                     </div>
                 </div>
                 <!-- Other image containers -->
@@ -163,36 +145,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Temukan semua tombol 'like'
-const likeButtons = document.querySelectorAll('.like-button');
-
-// Tambahkan event listener untuk setiap tombol 'like'
-likeButtons.forEach(button => {
-    let count = 0; // inisialisasi jumlah 'like' untuk setiap gambar
-    button.addEventListener('click', function() {
-        count++;
-        const likeCount = this.nextElementSibling; // elemen berikutnya setelah tombol 'like'
-        likeCount.textContent = count; // perbarui teks jumlah 'like'
-        this.disabled = true; // nonaktifkan tombol setelah diklik (opsional)
-    });
-});
-
-button.addEventListener('click', function() {
-    if (!this.classList.contains('liked')) {
-        count++;
-        likeCount.textContent = count;
-        this.classList.add('liked');
-        this.disabled = true; // Nonaktifkan tombol ketika di-like
-    } else {
-        count--;
-        likeCount.textContent = count;
-        this.classList.remove('liked');
-        this.disabled = false; // Aktifkan tombol ketika di-unlike
-    }
-
-    likes[imageSrc] = count;
-    localStorage.setItem('likes', JSON.stringify(likes)); // Simpan perubahan di local storage
-});
 
 document.getElementById('commentForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -324,32 +276,6 @@ copyright.innerHTML = `Copyright &copy; ${currentYear} h.arrhmn`;
 // Pilih elemen footer untuk menambahkan informasi hak cipta
 const footer = document.querySelector('.footer');
 footer.appendChild(copyright);
-
-// Tambahkan event listener untuk setiap tombol 'like'
-likeButtons.forEach(button => {
-    let count = 0; // inisialisasi jumlah 'like' untuk setiap gambar
-    const imageSrc = button.previousElementSibling.getAttribute('data-src'); // Dapatkan URL gambar
-
-    // Periksa apakah 'like' sudah ada di localStorage untuk gambar tersebut
-    const storedLikes = localStorage.getItem('likes');
-    const likes = storedLikes ? JSON.parse(storedLikes) : {};
-
-    if (likes[imageSrc]) {
-        count = likes[imageSrc]; // Jika ada, gunakan jumlah 'like' yang tersimpan
-        button.disabled = true; // Nonaktifkan tombol jika sudah di-like sebelumnya
-    }
-
-    button.addEventListener('click', function() {
-        count++;
-        const likeCount = this.nextElementSibling; // elemen berikutnya setelah tombol 'like'
-        likeCount.textContent = count; // perbarui teks jumlah 'like'
-        this.disabled = true; // nonaktifkan tombol setelah diklik (opsional)
-
-        // Simpan jumlah 'like' ke localStorage
-        likes[imageSrc] = count;
-        localStorage.setItem('likes', JSON.stringify(likes));
-    });
-});
 
 </script>
 
