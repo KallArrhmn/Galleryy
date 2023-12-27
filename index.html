@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.php">
     <title>My Name Is Kall</title>
 </head>
 <body>
@@ -113,9 +114,7 @@
                         </div>
                     </div>
                 </form>
-                <div class="comments-list">
-                    <!-- Daftar komentar akan ditampilkan di sini -->
-                </div>
+                <div class="comments-list">:</div>
             </div>
         
         <hr id="comments" style="border-top: 1px solid #000; margin: 20px 0;">
@@ -146,8 +145,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-document.getElementById('commentForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.getElementById('commentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
     const name = document.getElementById('name').value;
     const comment = document.getElementById('comment').value;
@@ -168,6 +167,14 @@ document.getElementById('commentForm').addEventListener('submit', function(e) {
     document.getElementById('comment').value = '';
 });
 
+document.getElementById('comment').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        // Jika tombol "Enter" ditekan, kirim formulir
+        event.preventDefault(); // Untuk mencegah enter mengirim form secara default
+        document.getElementById('commentForm').submit(); // Mengirim formulir
+    }
+});
+
 function saveComment(name, comment) {
     const commentData = {
         name: name,
@@ -184,18 +191,22 @@ function displayComments() {
     const commentsList = document.querySelector('.comments-list');
     const comments = JSON.parse(localStorage.getItem('comments')) || [];
 
-    comments.forEach(commentData => {
-        const commentItem = document.createElement('div');
-        commentItem.classList.add('comment-item');
-        commentItem.innerHTML = `
-            <p><strong>${commentData.name}</strong>: ${commentData.comment}</p>
-        `;
-        commentsList.appendChild(commentItem);
-    });
-}
+    // Periksa apakah komentar sudah ditambahkan ke daftar komentar
+    const existingComments = commentsList.querySelectorAll('.comment-item').length;
 
-// Memanggil fungsi displayComments saat halaman dimuat
-displayComments();
+    if (comments.length > existingComments) {
+        // Cari komentar baru untuk ditambahkan ke daftar komentar
+        for (let i = existingComments; i < comments.length; i++) {
+            const commentData = comments[i];
+            const commentItem = document.createElement('div');
+            commentItem.classList.add('comment-item');
+            commentItem.innerHTML = `
+                <p><strong>${commentData.name}</strong>: ${commentData.comment}</p>
+            `;
+            commentsList.appendChild(commentItem);
+        }
+    }
+}
 
 // Menambahkan event listener pada form untuk menyimpan komentar ke localStorage
 document.getElementById('commentForm').addEventListener('submit', function(e) {
@@ -204,17 +215,21 @@ document.getElementById('commentForm').addEventListener('submit', function(e) {
     const name = document.getElementById('name').value;
     const comment = document.getElementById('comment').value;
 
-    // Menyimpan komentar ke localStorage
-    saveComment(name, comment);
+    // Kirim komentar ke server (contoh menggunakan teknik AJAX)
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'process_comment.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            // Tanggapan dari server (jika diperlukan)
+            // Anda dapat menambahkan logika untuk menampilkan komentar langsung di sini
+        }
+    };
+    xhr.send(`name=${encodeURIComponent(name)}&comment=${encodeURIComponent(comment)}`);
 
-    // Menampilkan komentar yang baru ditambahkan
-    const commentItem = document.createElement('div');
-    commentItem.classList.add('comment-item');
-    commentItem.innerHTML = `
-        <p><strong>${name}</strong>: ${comment}</p>
-    `;
-    const commentsList = document.querySelector('.comments-list');
-    commentsList.appendChild(commentItem);
+    // Bersihkan formulir setelah komentar dikirim
+    document.getElementById('name').value = '';
+    document.getElementById('comment').value = '';
 });
 
 // downloader
@@ -239,8 +254,6 @@ window.addEventListener('click', function(event) {
         modal.style.display = 'none';
     }
 });
-
-
 
     // waktu dan tahun
     function updateClock() {
